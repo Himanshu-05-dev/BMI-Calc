@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".MainActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="BMI Calculator"
+        android:textSize="70sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="60dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Weight Label -->
+    <TextView
+        android:id="@+id/slider_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Weight (in KG)"
+        android:textSize="20sp"
+        android:textColor="#BBDEFB"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Weight Slider -->
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slider_text1"
+        app:thumbColor="#FF6F61"
+        app:thumbRadius="16dp"
+        app:trackHeight="8dp"
+        android:valueFrom="1"
+        android:valueTo="200"
+        android:stepSize="1" />
+
+    <!-- Height Label -->
+    <TextView
+        android:id="@+id/slider_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Height (in CM)"
+        android:textSize="20sp"
+        android:textColor="#BBDEFB"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/slider1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Height Slider -->
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slider_text2"
+        app:thumbColor="#FF6F61"
+        app:thumbRadius="16dp"
+        app:trackHeight="8dp"
+        android:valueFrom="1"
+        android:valueTo="300"
+        android:stepSize="1" />
+
+    <!-- Calculate Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calcButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="24dp"
+        android:backgroundTint="#FF6F61"
+        android:shadowColor="#000000"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        android:text="Calculate BMI"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        app:cornerRadius="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slider2" />
+
+    <!-- BMI Result -->
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="Your BMI: 0"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="8"
+        app:layout_constraintTop_toBottomOf="@id/calcButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
